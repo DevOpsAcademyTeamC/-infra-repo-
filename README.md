@@ -84,7 +84,7 @@ Once the Docker image is pushed to the registry, Jenkins can automatically deplo
 
 Here is a visual representation of the CI/CD pipeline:
 
-
+![CI/CD Pipeline](CI.drawio.png)
 
 ## Conclusion
 
