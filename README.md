@@ -63,7 +63,7 @@ GitHub is configured to send a webhook to Jenkins whenever a new commit is pushe
 #### 3. Jenkins Build Process
 
 	a. Pull Latest Changes
-Jenkins receives the webhook and pulls the latest changes from the GitHub repository (both infra-repo and 		app-repo).
+Jenkins receives the webhook and pulls the latest changes from the GitHub repository (both infra-repo and app-repo).
 
 	b. Build and Test
 Jenkins executes the following steps defined in the Jenkinsfile located in the app-repo:
