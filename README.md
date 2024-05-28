@@ -54,13 +54,13 @@ We have two main repositories in our GitHub organization:
 
 ## CI/CD Pipeline Details
 
-1. Code Commit and Push
+#### 1. Code Commit and Push
 Developers work on feature branches and commit their changes to the GitHub repository. Once changes are ready, they are pushed to the main branch, triggering the CI/CD pipeline.
 
-2. GitHub Webhook to Jenkins
+#### 2. GitHub Webhook to Jenkins
 GitHub is configured to send a webhook to Jenkins whenever a new commit is pushed to the main branch. The webhook contains information about the commit and triggers Jenkins to start the build process.
 
-3. Jenkins Build Process
+#### 3. Jenkins Build Process
 
 	a. Pull Latest Changes
 Jenkins receives the webhook and pulls the latest changes from the GitHub repository (both infra-repo and 		app-repo).
@@ -68,7 +68,7 @@ Jenkins receives the webhook and pulls the latest changes from the GitHub reposi
 	b. Build and Test
 Jenkins executes the following steps defined in the Jenkinsfile located in the app-repo:
 
-	Build: Jenkins compiles the application code.
+Build: Jenkins compiles the application code.
 Test: Jenkins runs automated tests, including unit tests, integration tests, and end-to-end tests.
 
 	c. Docker Image Creation
@@ -77,7 +77,7 @@ If the build and tests are successful, Jenkins proceeds to create a Docker image
 	d. Push Docker Image
 The newly created Docker image is then tagged with the build version and pushed to a Docker registry (e.g., Docker Hub or a private Docker registry).
 
-4. Deployment to Staging/Production
+#### 4. Deployment to Staging/Production
 Once the Docker image is pushed to the registry, Jenkins can automatically deploy the image to the staging or production environment. Deployment scripts in the infra-repo manage this process, ensuring the application is correctly configured and running in the target environment.
 
 ## Diagram
